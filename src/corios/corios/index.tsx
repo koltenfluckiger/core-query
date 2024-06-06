@@ -6,10 +6,10 @@ declare interface Options {
 
 import axios, {AxiosInstance, CreateAxiosDefaults} from "axios";
 
-class Korios {
+class Corios {
   public axios: AxiosInstance;
 
-  public _getInstance(): Korios {
+  public _getInstance(): Corios {
     return this;
   }
 
@@ -34,12 +34,12 @@ class Korios {
 
   public asyncerrator(options = {}): () => Promise<any> {
     return async () => {
-          try {
-            return await this.axios.request(options);
-          } catch (err) {
-            return Promise.reject(err);
-          }
-        };
+      try {
+        return await this.axios.request(options);
+      } catch (err) {
+        return Promise.reject(err);
+      }
+    };
   }
 
   public async request(options = {}): Promise<Object> {
@@ -63,4 +63,4 @@ class Korios {
   }
 }
 
-export default new Korios();
+export default new Corios();

@@ -1,7 +1,7 @@
-import Korios from "../../korios";
+import Corios from "../../corios";
 
 function asyncRequest(options: Object) {
-  return Korios.asyncerrator(options);
+  return Corios.asyncerrator(options);
 }
 
 export default asyncRequest;

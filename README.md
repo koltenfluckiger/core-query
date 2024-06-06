@@ -1,9 +1,9 @@
 # Kore Query
 
-![GitHub contributors](https://img.shields.io/github/contributors/koltenfluckiger/kore-query?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/koltenfluckiger/kore-query?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/koltenfluckiger/kore-query?style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/koltenfluckiger/kore-query?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/koltenfluckiger/core-query?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/koltenfluckiger/core-query?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/koltenfluckiger/core-query?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/koltenfluckiger/core-query?style=for-the-badge)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -12,14 +12,14 @@
 
 A library built on @tanstack/react-query to increase ease of use, control, and efficiency
 
-[Github Repo](https://github.com/koltenfluckiger/kore-query)
+[Github Repo](https://github.com/koltenfluckiger/core-query)
 
 ---
 
 ## Contents
 
-- [Kore Query](#kore-query)
-- [Kore-Query](#kore-query-1)
+- [Kore Query](#core-query)
+- [Kore-Query](#core-query-1)
   - [Contents](#contents)
   - [About](#about)
   - [Installation](#installation)
@@ -56,19 +56,19 @@ Kore-Query comes with custom hooks like mutations, prefetch, queries. It also pr
 npm
 
 ```bash
-npm i --save kore-query
+npm i --save core-query
 ```
 
 yarn
 
 ```bash
-yarn add kore-query
+yarn add core-query
 ```
 
 To clone the repo:
 
 ```bash
-git clone https://github.com/koltenfluckiger/kore-query.git
+git clone https://github.com/koltenfluckiger/core-query.git
 ```
 
 ---
@@ -78,17 +78,17 @@ git clone https://github.com/koltenfluckiger/kore-query.git
 ## Examples
 
 ```javascript
-import {Korios, useKoreQuery, useKoreQueryContext} from "kore-query";
+import {Corios, useCoreQuery, useCoreQueryContext} from "core-query";
 import React, {Suspense} from "react";
 
 function Container({children, ...props}) {
-  const dashboards = Korios.asyncerrator({
+  const dashboards = Corios.asyncerrator({
     url: "/api/dashboards",
     params: {populate: "*"},
     method: "GET",
     options: {withCredentials: true},
   });
-  const {data, isLoading, error} = useKoreQuery({
+  const {data, isLoading, error} = useCoreQuery({
     queryKey: ["dashboard"],
     queryFunc: dashboards,
   });
@@ -137,7 +137,7 @@ Kolten Fluckiger
 
 - GitHub Username: koltenfluckiger
 - GitHub Email: <wrtunder@gmail.com>
-- [Github Repo](https://github.com/koltenfluckiger/kore-query)
+- [Github Repo](https://github.com/koltenfluckiger/core-query)
 
 ---
 

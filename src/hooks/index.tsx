@@ -1,14 +1,14 @@
-import {useKoreQuery, useKoreQueryAutoRefetch} from "./query";
-import {useKoreQueryMutation, useKoreQueryMutationRequest} from "./mutation";
+import {useCoreQuery, useCoreQueryAutoRefetch} from "./query";
+import {useCoreQueryMutation, useCoreQueryMutationRequest} from "./mutation";
 
-import useKoreQueryPrefetch from "./prefetch";
-import withKoreQueryLoader from "./with-kore-query-loader";
+import useCoreQueryPrefetch from "./prefetch";
+import withCoreQueryLoader from "./with-core-query-loader";
 
 export {
-  useKoreQuery,
-  useKoreQueryAutoRefetch,
-  useKoreQueryMutation,
-  useKoreQueryMutationRequest,
-  useKoreQueryPrefetch,
-  withKoreQueryLoader,
+  useCoreQuery,
+  useCoreQueryAutoRefetch,
+  useCoreQueryMutation,
+  useCoreQueryMutationRequest,
+  useCoreQueryPrefetch,
+  withCoreQueryLoader,
 };

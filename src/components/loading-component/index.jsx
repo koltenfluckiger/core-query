@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-
+import React from "react";
 import ReactSCSS from "react-scss-style-module";
 import styles from "./loading-component.module.scss";
 

@@ -1,7 +1,7 @@
 /**
- * The namespace for KoreQuery.
+ * The namespace for CoreQuery.
  */
-declare namespace KoreQuery {
+declare namespace CoreQuery {
   /**
    * Options for React Query.
    */
@@ -22,7 +22,7 @@ import {
 import React, {createContext, useContext, useState} from "react";
 
 // @ts-ignore
-const KoreQueryContext: React.Context<QueryClient> = createContext({});
+const CoreQueryContext: React.Context<QueryClient> = createContext({});
 
 /**
  * Creates a new instance of QueryClient with the specified options.
@@ -60,7 +60,7 @@ const queryClientFactory = ({
  * @param props - Additional props to pass to the component.
  * @returns An object containing the children and optional options.
  */
-function KoreQuery({
+function CoreQuery({
   options = {
     queries: {
       staleTime: 0.5 * 24 * 60 * 60,
@@ -75,7 +75,7 @@ function KoreQuery({
   mutationCacheOptions = {},
   ...props
 }): {
-  options?: KoreQuery.ReactQueryOptions;
+  options?: CoreQuery.ReactQueryOptions;
   customOptions?: Object;
   queryCacheOptions?: Object;
   mutationCacheOptions?: Object;
@@ -90,23 +90,23 @@ function KoreQuery({
   );
 
   return (
-    <QueryClientProvider client={queryClient} context={KoreQueryContext}>
+    <QueryClientProvider client={queryClient} context={CoreQueryContext}>
       {props.children}
     </QueryClientProvider>
   ) as {
-    options?: KoreQuery.ReactQueryOptions;
+    options?: CoreQuery.ReactQueryOptions;
     customOptions?: Object;
     queryCacheOptions?: Object;
     mutationCacheOptions?: Object;
   };
 }
-const useKoreQueryClient = () => {
+const useCoreQueryClient = () => {
   // @ts-ignore
-  return useContext(KoreQueryContext);
+  return useContext(CoreQueryContext);
 };
 
-const useKoreQueryContext = () => {
-  return KoreQueryContext;
+const useCoreQueryContext = () => {
+  return CoreQueryContext;
 };
 
-export {KoreQuery, KoreQueryContext, useKoreQueryClient, useKoreQueryContext};
+export {CoreQuery, CoreQueryContext, useCoreQueryClient, useCoreQueryContext};

@@ -9,15 +9,15 @@
  * @returns {Promise<any>} - A promise that resolves with the prefetched data.
  */
 
-import {useKoreQueryClient} from "../../providers";
-function useKoreQueryPrefetch({
+import {useCoreQueryClient} from "../../providers";
+function useCoreQueryPrefetch({
   queryKey,
   queryFunc,
 }: {
   queryKey: Array<string>;
   queryFunc: Awaited<Promise<any>>;
 }) {
-  const queryClient = useKoreQueryClient();
+  const queryClient = useCoreQueryClient();
   return queryClient.prefetchQuery({
     queryKey: queryKey,
     queryFn: async () => {
@@ -26,4 +26,4 @@ function useKoreQueryPrefetch({
     },
   });
 }
-export default useKoreQueryPrefetch;
+export default useCoreQueryPrefetch;

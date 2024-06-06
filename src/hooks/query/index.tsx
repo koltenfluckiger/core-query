@@ -2,10 +2,10 @@ import {QueryClient, useQuery} from "@tanstack/react-query";
 
 import React from "react";
 import {Time} from "../../utils";
-import {useKoreQueryContext} from "../../providers";
+import {useCoreQueryContext} from "../../providers";
 
 /**
- * Options for useKoreQuery hook.
+ * Options for useCoreQuery hook.
  * @typedef {Object} Options
  * @property {Array<string>} queryKey - Unique identifier for the query.
  * @property {() => Promise<any>} queryFunc - Function to fetch the data.
@@ -17,14 +17,14 @@ import {useKoreQueryContext} from "../../providers";
  * Custom hook for simplified data fetching using React Query.
  *
  * @param {Object} params - Parameters for the hook.
- * @param {React.Context<QueryClient | undefined>} [params.queryContext=useKoreQueryContext()] - Context providing QueryClient.
+ * @param {React.Context<QueryClient | undefined>} [params.queryContext=useCoreQueryContext()] - Context providing QueryClient.
  * @param {Array<string>} params.queryKey - Unique key for the query.
  * @param {() => Promise<any>} params.queryFunc - Function to execute for data fetching.
  * @param {Object} [params.queryOptions] - Additional options for the query.
  * @returns {Object} - The result of the useQuery hook from React Query.
  */
-function useKoreQuery({
-  queryContext = useKoreQueryContext(),
+function useCoreQuery({
+  queryContext = useCoreQueryContext(),
   queryKey,
   queryFunc,
   queryOptions,
@@ -56,10 +56,10 @@ function useKoreQuery({
  *
  * @param {Object} params - Parameters for the hook.
  * @param {number} [params.refetchInterval=Time.convert(...)] - Interval for auto refetching in milliseconds.
- * @param {...otherParams} - Other parameters passed to useKoreQuery.
+ * @param {...otherParams} - Other parameters passed to useCoreQuery.
  * @returns {Object} - The result of the useQuery hook with auto refetching configured.
  */
-function useKoreQueryAutoRefetch({
+function useCoreQueryAutoRefetch({
   refetchInterval = Time.convert({
     to: Time.TYPES.MILLISECONDS,
     hours: 1,
@@ -67,7 +67,7 @@ function useKoreQueryAutoRefetch({
     seconds: 0,
     days: 0,
   }),
-  queryContext = useKoreQueryContext(),
+  queryContext = useCoreQueryContext(),
   queryKey,
   queryFunc,
 }: {
@@ -92,4 +92,4 @@ function useKoreQueryAutoRefetch({
     refetchInterval: refetchInterval,
   });
 }
-export {useKoreQuery, useKoreQueryAutoRefetch};
+export {useCoreQuery, useCoreQueryAutoRefetch};
